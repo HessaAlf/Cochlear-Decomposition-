@@ -84,7 +84,7 @@ x=size(wavelet);
   
 for i=1:1:x(1)
     
-wavelet_time(i,:) =irfft(wavelet(i,:),length(wavelet(i,:)));
+wavelet_time(i,:) =real(ifft(wavelet(i,:),length(wavelet(i,:))));
 N=length(wavelet_time(i,:)); 
 wavelet_time=wavelet_time(i,:);
 %try checking if N is odd or even.
@@ -99,7 +99,7 @@ end
   
 for i=1:1:x(1)
     
-scaling_time(i,:) =irfft(scaling(i,:),length(scaling (i,:)));
+scaling_time(i,:) =real(ifft(scaling(i,:),length(scaling (i,:))));
  N=length(scaling_time(i,:)); 
  scaling_time=scaling_time(i,:);
 % %try checking if N is odd or even.
